@@ -1,0 +1,9 @@
+Custom Partitioning: Instead of relying solely on the default hash-based partitioning by "customer_id", you can implement custom partitioning logic. For example, you could use range partitioning or a more sophisticated partitioning strategy based on some statistical analysis of the data distribution.
+
+Preprocessing: Before repartitioning, you can analyze the data distribution and apply preprocessing techniques such as data normalization or stratified sampling to reduce skewness.
+
+Multiple Levels of Aggregation: Instead of directly counting the orders per customer, you might consider multiple levels of aggregation. For instance, you could first aggregate at a higher level (e.g., region or product category) to reduce the impact of data skew, then perform a secondary aggregation at the customer level.
+
+Data Skew Handling Libraries: There are libraries and techniques specifically designed to handle data skew in distributed computing frameworks like Spark. These libraries may offer advanced algorithms or optimizations to mitigate the impact of skew.
+
+Dynamic Resource Allocation: In some cases, dynamically allocating more resources (such as memory or CPU cores) to the node processing the skewed partition may help alleviate the bottleneck.

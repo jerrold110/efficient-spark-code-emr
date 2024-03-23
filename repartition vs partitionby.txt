@@ -1,0 +1,5 @@
+while repartition() and partitionBy() might seem similar, they serve different purposes. 
+repartition() is about how the data is distributed across partitions in memory during computation, 
+while partitionBy() is about how the data is partitioned on disk when writing out to a file system.
+
+Repartitioning can be useful for improving performance in Spark applications by controlling the distribution of data across the cluster and ensuring that data is evenly distributed across partitions.
