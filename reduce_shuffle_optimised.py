@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 
 with SparkSession.builder.appName("Reduce shuffle optimised").getOrCreate() as spark:
     parkViolations = spark.read.option("header", True).csv("/input/")
-    # THIS IS NOT A TECHNIQUE FOR SKEWED DATA BECAUSE OF A BOTTLENECK EXECUTOR, SALTING IS THE BEST APPROACH
+    # THIS IS NOT A TECHNIQUE FOR SKEWED DATA BECAUSE OF A BOTTLENECK EXECUTOR, SALTING IS THE BEST APPROACH. MEDIUM ARTICLES ARE WRONG
     plateTypeCountDF = parkViolations.groupBy("Plate Type").count()
     plateTypeCountDF.explain() 
 
