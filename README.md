@@ -9,7 +9,7 @@ I set up HDFS and Spark environment on an Amazon EMR cluster then run bash comma
 ## Techniques:
 #### Select only the columns you need to reduce data shuffle
 #### Repartitionong
-We can reduce the data shuffle in groupby aggregate operations by moving the data that is processed together near the node where the computations take place. In this example I repartition the data by the field that they are grouped on idividual nodes, on before performing the aggregate operation.
+We can reduce the data shuffle in groupby aggregate operations by moving the data that is processed together near the node where the computations take place. In this example I repartition the data by the field that they are grouped on in different nodes before performing the aggregate operation.
 
 #### Caching
 When using a data structure more than once, we can cache the data in memory to not have to read it into memory (and thus shuffle the data) more than one time.
